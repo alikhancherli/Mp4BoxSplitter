@@ -99,6 +99,7 @@
             this.tStartTime.Name = "tStartTime";
             this.tStartTime.Size = new System.Drawing.Size(69, 20);
             this.tStartTime.TabIndex = 4;
+            this.tStartTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // openFileDialog1
             // 
@@ -112,6 +113,7 @@
             this.tFileName.Name = "tFileName";
             this.tFileName.Size = new System.Drawing.Size(279, 20);
             this.tFileName.TabIndex = 5;
+            this.tFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tFileName.DragDrop += new System.Windows.Forms.DragEventHandler(this.TFileName_DragDrop);
             this.tFileName.DragEnter += new System.Windows.Forms.DragEventHandler(this.TFileName_DragEnter);
             this.tFileName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TFileName_KeyDown);
@@ -123,6 +125,7 @@
             this.tEndTime.Name = "tEndTime";
             this.tEndTime.Size = new System.Drawing.Size(69, 20);
             this.tEndTime.TabIndex = 6;
+            this.tEndTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bEndTime
             // 
@@ -331,7 +334,7 @@
             this.BExplore.Name = "BExplore";
             this.BExplore.Size = new System.Drawing.Size(50, 23);
             this.BExplore.TabIndex = 25;
-            this.BExplore.Text = "Explore";
+            this.BExplore.Text = "Folder";
             this.BExplore.UseVisualStyleBackColor = true;
             this.BExplore.Click += new System.EventHandler(this.BExplore_Click);
             // 
