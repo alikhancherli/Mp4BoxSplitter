@@ -32,7 +32,7 @@ II - pause
 +f  - moves one frame forward. 
 		It is not possible with this control to move one frame backward.
 
-
+![Screenshot](snap01.jpg)
 
 TODO
 
