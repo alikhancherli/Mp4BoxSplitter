@@ -12,7 +12,7 @@ Use Scenario<br/>
 1. File -  open mp4 file<br/>
     it is possible to Drag and drop file into textbox<br/>
     or type or Paste FileName into TextBox and press Enter<br/>
-    It automaticly plays the video.<br/>
+    It automatically plays the video.<br/>
 2. click "Start time" to set Start time<br/>
 3. click "End time" to set End time<br/>
     the time is in seconds<br/>
