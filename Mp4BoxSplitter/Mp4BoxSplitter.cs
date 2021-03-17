@@ -43,14 +43,22 @@ namespace Mp4BoxSplitter
 
         private void BCutSave_Click(object sender2, EventArgs e)
         {
+            string sStartTime = decimal.Parse(tStartTime.Text).ToString("0.##").Replace(",", ".");
+            string sEndTime = decimal.Parse(tEndTime.Text).ToString("0.##").Replace(",", ".");
+            DevideVideo(sStartTime,sEndTime);
+        }
+
+
+        private void DevideVideo(string start , string end)
+        {
             axWindowsMediaPlayer1.Ctlcontrols.stop();
 
             //pokličem mp4box.exe s parametri                        
             Process p = new Process();
             p.StartInfo.FileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "mp4box", @"mp4box.exe");
 
-            string sStartTime = decimal.Parse(tStartTime.Text).ToString("0.##").Replace(",", ".");
-            string sEndTime = decimal.Parse(tEndTime.Text).ToString("0.##").Replace(",", ".");
+            string sStartTime = start;
+            string sEndTime = end;
 
             string inFileName = tFileName.Text;
             string outFileName = inFileName.Substring(0, inFileName.LastIndexOf(".")) + "_" + sStartTime + "-" + sEndTime + inFileName.Substring(inFileName.LastIndexOf("."));
@@ -242,5 +250,26 @@ namespace Mp4BoxSplitter
             };
             Process.Start(startInfo);
         }
+
+        private void btnInstagram_Click(object sender, EventArgs e)
+        {
+            double duration = axWindowsMediaPlayer1.currentMedia.duration;
+            int times = (int)Math.Ceiling((double)duration / 60);
+            if (duration>60)
+            {
+                double LatestVideo = (times * 60) - duration;
+                for (int i = 1; i < times; i++)
+                {
+                    DevideVideo(((i - 1) * 60).ToString(), ((i) * 60).ToString());
+                }
+                DevideVideo(((times - 1) * 60).ToString(), ((times * 60) - LatestVideo).ToString());
+            }
+            else
+            {
+                DevideVideo("0",duration.ToString());
+            }
+           
+        }
+
     }
 }

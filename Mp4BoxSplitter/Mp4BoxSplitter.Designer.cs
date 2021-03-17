@@ -55,6 +55,7 @@
             this.bPlusDot2 = new System.Windows.Forms.Button();
             this.BPlusFrame = new System.Windows.Forms.Button();
             this.BExplore = new System.Windows.Forms.Button();
+            this.btnInstagram = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +105,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "mp4 Files|*.mp4|mkv Files|*.mkv";
             // 
             // tFileName
             // 
@@ -156,10 +158,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tResult.BackColor = System.Drawing.SystemColors.WindowText;
             this.tResult.ForeColor = System.Drawing.SystemColors.Window;
-            this.tResult.Location = new System.Drawing.Point(769, 622);
+            this.tResult.Location = new System.Drawing.Point(825, 622);
             this.tResult.Multiline = true;
             this.tResult.Name = "tResult";
-            this.tResult.Size = new System.Drawing.Size(379, 72);
+            this.tResult.Size = new System.Drawing.Size(323, 72);
             this.tResult.TabIndex = 9;
             // 
             // bMinus1Sec
@@ -338,11 +340,22 @@
             this.BExplore.UseVisualStyleBackColor = true;
             this.BExplore.Click += new System.EventHandler(this.BExplore_Click);
             // 
+            // btnInstagram
+            // 
+            this.btnInstagram.Location = new System.Drawing.Point(759, 622);
+            this.btnInstagram.Name = "btnInstagram";
+            this.btnInstagram.Size = new System.Drawing.Size(60, 61);
+            this.btnInstagram.TabIndex = 26;
+            this.btnInstagram.Text = "Split to 1m files";
+            this.btnInstagram.UseVisualStyleBackColor = true;
+            this.btnInstagram.Click += new System.EventHandler(this.btnInstagram_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 694);
+            this.Controls.Add(this.btnInstagram);
             this.Controls.Add(this.BExplore);
             this.Controls.Add(this.BPlusFrame);
             this.Controls.Add(this.bPlusDot2);
@@ -404,6 +417,7 @@
         private System.Windows.Forms.Button bPlusDot2;
         private System.Windows.Forms.Button BPlusFrame;
         private System.Windows.Forms.Button BExplore;
+        private System.Windows.Forms.Button btnInstagram;
     }
 }
 
