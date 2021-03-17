@@ -253,23 +253,27 @@ namespace Mp4BoxSplitter
 
         private void btnInstagram_Click(object sender, EventArgs e)
         {
-            double duration = axWindowsMediaPlayer1.currentMedia.duration;
-            int times = (int)Math.Ceiling((double)duration / 60);
-            if (duration>60)
+            if (axWindowsMediaPlayer1.currentMedia.duration < 60)
             {
-                double LatestVideo = (times * 60) - duration;
-                for (int i = 1; i < times; i++)
-                {
-                    DevideVideo(((i - 1) * 60).ToString(), ((i) * 60).ToString());
-                }
-                DevideVideo(((times - 1) * 60).ToString(), ((times * 60) - LatestVideo).ToString());
+                MessageBox.Show("File duration must be greater than 1 minute");
             }
             else
             {
-                DevideVideo("0",duration.ToString());
+                double duration = axWindowsMediaPlayer1.currentMedia.duration;
+                int times = (int)Math.Ceiling((double)duration / 60);
+                if (duration > 60)
+                {
+                    double LatestVideo = (times * 60) - duration;
+                    for (int i = 1; i < times; i++)
+                    {
+                        DevideVideo(((i - 1) * 60).ToString(), ((i) * 60).ToString());
+                    }
+                    DevideVideo(((times - 1) * 60).ToString(), ((times * 60) - LatestVideo).ToString());
+                }
             }
            
         }
 
+        
     }
 }
